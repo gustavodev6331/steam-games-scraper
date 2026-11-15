@@ -3,6 +3,7 @@ import requests
 
 # app_id = 1091500
 
+games = []
 
 def get_game_data(app_id):
     #get_info
@@ -29,10 +30,11 @@ def get_game_data(app_id):
         "price": game_data["price_overview"]["final_formatted"],
         "genre": game_data["genres"][0]["description"],
     }
+    games.append(game_info)
     return game_info
 
 game = get_game_data(1091500)
-print(game)
+print(games)
 
 
 
