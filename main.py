@@ -25,9 +25,9 @@ def get_game_data(app_id):
     game_info = {
         "name": game_data["name"],
         "app_id": app_id,
-        "developer": game_data["developers"][0],
-        "release_date": game_data["release_date"]["date"],
         "price": game_data["price_overview"]["final_formatted"],
+        "release_date": game_data["release_date"]["date"],
+        "developer": game_data["developers"][0],
         "genre": game_data["genres"][0]["description"],
     }
     games.append(game_info)
