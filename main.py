@@ -1,8 +1,5 @@
 import requests
 
-
-# app_id = 1091500
-
 games = []
 
 def get_game_data(app_id):
@@ -33,14 +30,8 @@ def get_game_data(app_id):
     games.append(game_info)
     return game_info
 
-game = get_game_data(1091500)
+get_game_data(1091500)
+get_game_data(730)
+get_game_data(570)
 print(games)
 
-
-
-#
-# print(game_data["name"])
-# print(game_data["developers"])
-# print(game_data["release_date"]["date"])
-# print(game_data["price_overview"]["final_formatted"])
-# print(game_data["genres"][0]["description"])
