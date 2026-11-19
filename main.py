@@ -18,11 +18,14 @@ def get_game_data(app_id):
 
     #organize information
     game_data = data[str(app_id)]["data"]
+    price_data = game_data.get("price_overview")
+    price = price_data["final_formatted"] if price_data else "Free"
+    # print(game_data.keys())
 
     game_info = {
         "name": game_data["name"],
         "app_id": app_id,
-        "price": game_data["price_overview"]["final_formatted"],
+        "price": price,
         "release_date": game_data["release_date"]["date"],
         "developer": game_data["developers"][0],
         "genre": game_data["genres"][0]["description"],
