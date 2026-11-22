@@ -37,4 +37,7 @@ get_game_data(1091500)
 get_game_data(730)
 get_game_data(570)
 print(games)
+print(len(games))
+print(games[0]["name"])
+print(games[0]["app_id"])
 
