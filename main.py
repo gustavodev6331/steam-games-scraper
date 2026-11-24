@@ -13,8 +13,8 @@ def get_game_data(app_id):
     }
 
     response = requests.get(url, params=params, timeout=15)
-    data = response.json()
     response.raise_for_status()
+    data = response.json()
 
     #organize information
     game_data = data[str(app_id)]["data"]
@@ -36,8 +36,8 @@ def get_game_data(app_id):
 app_ids = [1091500, 730, 570]
 
 for app_id in app_ids:
-    game_info = get_game_data(app_id)
-    print(game_info)
+    get_game_data(app_id)
+print(games)
 
 
 
