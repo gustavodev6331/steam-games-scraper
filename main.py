@@ -1,4 +1,7 @@
+from fileinput import filename
+
 import requests
+import csv
 
 games = []
 
@@ -37,8 +40,12 @@ app_ids = [1091500, 730, 570]
 
 for app_id in app_ids:
     get_game_data(app_id)
-print(games)
 
+with open ('steam_games.csv', 'w', newline='' , encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=games[0].keys())
+
+    writer.writeheader()
+    writer.writerows(games)
 
 
 
